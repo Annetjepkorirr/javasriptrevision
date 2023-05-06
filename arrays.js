@@ -1,6 +1,13 @@
 // Given an array of strings, use a function to reverse all the 
 // elements in the string in ascending order and the specific elements
 //  in descending order
+function reverseString(arr){
+    let wordReverse = arr.map(stmt => stmt.split('').reverse().join(''));
+    return wordReverse
+
+}
+let arr = ["Mary","Jane","Winnie"]
+console.log(reverseString(arr));
 
 
 // Given an array of objects, each object representing a person with a name 
@@ -9,20 +16,18 @@
 function peopleIdentity(people){
     let sum = 0
     for (let i = 0; i < people.length; i++) {
-        if (people.age[i] < 18) {
-            sum+=people.age[i]
+        if (people[i].age < 18) {
+            sum+=people[i].age
         }
-        return sum
-        
     }
+    return sum 
+};
 const people = [
-  { name: 'Alice', age: 17 },
-  { name: 'Eunice', age: 22 },
-  { name: 'Charlie', age: 14 },
-  { name: 'Max', age: 19 },
-];
-
-}
+    { name: 'Alice', age: 17 },
+    { name: 'Eunice', age: 22 },
+    { name: 'Charlie', age: 14 },
+    { name: 'Max', age: 19 },
+  ];
 let sumOfAllPeople = peopleIdentity(people)
 console.log(sumOfAllPeople);
 
@@ -48,14 +53,18 @@ console.log(findPositiveOrNegative(nums));
 // Given an array of objects, where each object represents an employee with an id, name, and salary 
 // property, write a function that returns a new array of employee objects sorted by their salary
 //  in ascending order.
-// function identityEmployee(person){
-//     const person=[
-//         {id: "3748787698", names: "James", salary: "60,0000"},
-//         {id: "3478594578", names: "Jane", salary: "70,0000"},
-//         {id: "5875964901", names: "Mary", salary: "90,0000"}
+function identityEmployee(person){
+    let sortSalary =person.slice().sort((j,l) => j.salary - l.salary);
+    return sortSalary
+}
+const person=[
+    {id: "3748787698", names: "James", salary: "90,0000"},
+    {id: "3478594578", names: "Jane", salary: "20,0000"},
+    {id: "5875964901", names: "Mary", salary: "100,0000"},
+    {id: "5875964901", names: "Jamina", salary: "80,0000"}
 
-//     ]
-// }
+]
 // let salary = person.map(item => item.salary); 
 // console.log(salary.sort());
-
+let sortSalary = identityEmployee(person);
+console.log(sortSalary);
