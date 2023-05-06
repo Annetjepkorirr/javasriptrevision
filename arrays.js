@@ -64,7 +64,5 @@ const person=[
     {id: "5875964901", names: "Jamina", salary: "80,0000"}
 
 ]
-// let salary = person.map(item => item.salary); 
-// console.log(salary.sort());
 let sortSalary = identityEmployee(person);
 console.log(sortSalary);
